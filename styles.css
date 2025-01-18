@@ -25,4 +25,8 @@ header {
     border-radius: 40px;
 }
 
+.current-img {
+    max-height: 90%;
+    max-width: 90%;
+}
 
