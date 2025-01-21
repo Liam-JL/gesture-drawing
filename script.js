@@ -41,4 +41,15 @@ reader.addEventListener('load', () => {
     currentImg.src = reader.result;
 })
 
+currentImg.addEventListener('click', () => {
+    if(document.fullscreenElement){
+        document.exitFullscreen()
+    } else {
+        currentImg.requestFullscreen();
+    }
+})
+
+
+//TODO add 30 second intervals and a reset button for now
+//TODO Add full screen functionality
 //TODO Add little graphic at the bottom that has little squares representing how many images user has loaded in and a highlight round the current one 
