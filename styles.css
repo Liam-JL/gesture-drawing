@@ -1,13 +1,21 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 200px;
+    height: 100vh;
 }
 
 header {
     display: flex;
-    gap: 50px;
-    justify-content: center;
     align-items: center;
+    gap: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
 .logo {
@@ -16,8 +24,29 @@ header {
     border: solid 1px black;
 }
 
-
-
 .controls-container {
     border: black solid 1px;
 }
+
+.img-selection-container, .intervals-container, .submit-container, .controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-previews {
+    width: 90%;
+    min-height: 200px;
+    border: black 1px solid;
+    overflow: scroll;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
