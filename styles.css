@@ -1,32 +1,23 @@
- 
-
 body {
-    height: 100vh;
-    background-color: lightgrey;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 0;
 }
 
 header {
-    margin: 1rem;
-}
-
-.main-container {
-    width: 80vw;
-    height: 80vh;
-    background-color: white;
     display: flex;
-    justify-content: space-between;
+    gap: 50px;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 40px;
 }
 
-.current-img {
-    max-height: 90%;
-    max-width: 90%;
+.logo {
+    width: 50px;
+    height: 50px;
+    border: solid 1px black;
 }
 
+
+
+.controls-container {
+    border: black solid 1px;
+}

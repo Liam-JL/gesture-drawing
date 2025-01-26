@@ -1,55 +1,33 @@
-const selectImagesBtn = document.getElementById("select-images-btn");
-const fileInput = document.getElementById('fileInput');
-const currentImg = document.getElementById('current-img')
-const nextBtn = document.getElementById("next-btn")
-const prevBtn = document.getElementById("prev-btn")
 const reader = new FileReader();
+const imgSelectionBtn = document.getElementById("img-selection-btn");
+const imgInput = document.getElementById("img-input");
+const intervalBtns = document.querySelectorAll(".interval-btn");
+const controlsContainer = document.getElementById("controls-container")
 
 let currentImgCounter = 0;
-let files = [];
+let userImages = [];
+let interval = 0;
+
+controlsContainer.style.display = "none";
 
 //Open file dialog when button is clicked
-selectImagesBtn.addEventListener('click', () => {
-    fileInput.click();
+imgSelectionBtn.addEventListener('click', () => {
+    imgInput.click();
 });
-
+    
 //Handle file input change
-fileInput.addEventListener('change', () => {
+imgInput.addEventListener('change', () => {
     userImages = Array.from(fileInput.files);
     if (userImages.length > 0) {
         //Read the first image as Data URL
-        reader.readAsDataURL(userImages[currentImgCounter])
-    }
-})
-    
-nextBtn.addEventListener('click', () => {
-    if (currentImgCounter < userImages.length - 1) {
-        currentImgCounter ++;
-        reader.readAsDataURL(userImages[currentImgCounter]);
+        reader.readAsDataURL(imgSelectionBtn[currentImgCounter])
     }
 })
 
-prevBtn.addEventListener('click', () => {
-    if (currentImgCounter > 0) {
-        currentImgCounter --;
-        reader.readAsDataURL(userImages[currentImgCounter]);
-    }
-})
-    
-//When the file is loaded, set the file as source for CurrentImg so it displays in app
-reader.addEventListener('load', () => {
-    currentImg.src = reader.result;
-})
-
-currentImg.addEventListener('click', () => {
-    if(document.fullscreenElement){
-        document.exitFullscreen()
-    } else {
-        currentImg.requestFullscreen();
-    }
-})
-
-
-//TODO add 30 second intervals and a reset button for now
-//TODO Add full screen functionality
-//TODO Add little graphic at the bottom that has little squares representing how many images user has loaded in and a highlight round the current one 
+const radios = document.querySelectorAll('input[name="duration"]');
+radios.forEach(radio => {
+  radio.addEventListener('change', (event) => {
+    interval = event.target.value
+    console.log('Selected duration:', interval, 'seconds');
+  });
+});
