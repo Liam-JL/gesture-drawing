@@ -13,50 +13,52 @@
         <h1>GestureCore</h1>
     </header>
     <main>
+        <div id="settings-container" class="settings-container">
 
-        <div class="img-selection-container">
-            <button id="img-selection-btn" class="img-selection-btn button">Choose Images</button>
-            <input type="file" id="img-input" accept="image/*" multiple style="display: none;">
-            <div id="img-previews" class="img-previews">
+            <div id="img-selection-container"class="img-selection-container">
+                <button id="img-selection-btn" class="img-selection-btn button">Choose Images</button>
+                <input type="file" id="img-input" accept="image/*" multiple style="display: none;">
+                <div id="img-previews" class="img-previews">
+                </div>
+            </div>
+            
+            <div id="intervals-container" class="intervals-container">
+                <h2 class="intervals-container__header">Choose Interval</h2>
+                <div class="intervals-container__radio">
+                    <input type="radio" id="30sec" name="duration" value="30">
+                    <label for="30sec">30 seconds</label>
+        
+                    <input type="radio" id="45sec" name="duration" value="45">
+                    <label for="45sec">45 seconds</label>
+        
+                    <input type="radio" id="60sec" name="duration" value="60">
+                    <label for="60sec">60 seconds</label>
+        
+                    <input type="radio" id="90sec" name="duration" value="90">
+                    <label for="90sec">90 seconds</label>
+        
+                    <input type="radio" id="120sec" name="duration" value="120">
+                    <label for="120sec">120 seconds</label>
+                    <input type="radio" id="custom-interval-btn" name="duration" value="-1">
+                    <label for="custom-interval">
+                        <input type="number" name="custom" min="5" max="3600" style="width: 80px;" id="custom-input">
+                        <span>seconds</span>
+                    </label>
+                  </div>
+            </div>
+            <div id="submit-container" class="submit-container">
+                <button id="start-btn" class="submit-container__start button">Start Drawing</button>
             </div>
         </div>
 
-
-
-        <div class="intervals-container">
-            <h2 class="intervals-container__header">Choose Interval</h2>
-            <div class="intervals-container__radio">
-                <input type="radio" id="30sec" name="duration" value="30">
-                <label for="30sec">30 seconds</label>
-              
-                <input type="radio" id="45sec" name="duration" value="45">
-                <label for="45sec">45 seconds</label>
-              
-                <input type="radio" id="60sec" name="duration" value="60">
-                <label for="60sec">60 seconds</label>
-              
-                <input type="radio" id="90sec" name="duration" value="90">
-                <label for="90sec">90 seconds</label>
-              
-                <input type="radio" id="120sec" name="duration" value="120">
-                <label for="120sec">120 seconds</label>
-
-                <input type="radio" id="custom-interval-btn" name="duration" value="-1">
-                <label for="custom-interval">
-                    <input type="number" name="custom" min="5" max="3600" style="width: 80px;" id="custom-input">
-                    <span>seconds</span>
-                </label>
-              </div>
-        </div>
-        <div class="submit-container">
-            <button class="submit-container-btn button">Start Drawing</button>
+        <div id="display-container" class="display-container">
+            <img id="current-img" class="display-container__current-img" src="">
+            <div id="display-controls" class="display-container__controls">
+                <button id="previous-btn">Previous</button>
+                <button id="pause-btn">Pause/Play</button>
+                <button id="next-btn">Next</button>
         </div>
 
-        <div id="controls-container" class="controls-container">
-            <button>Previous</button>
-            <button>Pause/Play</button>
-            <button>Next</button>
-        </div>
     </main>
 </body>
 </html>
