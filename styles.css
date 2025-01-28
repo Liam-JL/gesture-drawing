@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 200px;
+    gap: 50px;
     height: 100vh;
 }
 
@@ -12,10 +12,25 @@ header {
     gap: 50px;
 }
 
-main {
+.settings-container {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    align-items: center;
+    gap: 3rem;
+}
+
+.img-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.intervals-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
@@ -24,22 +39,11 @@ main {
     border: solid 1px black;
 }
 
-.controls-container {
-    border: black solid 1px;
-}
-
-.img-selection-container, .intervals-container, .submit-container, .controls-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
 .img-previews {
     width: 90%;
     min-height: 200px;
     border: black 1px solid;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .thumbnail {
@@ -49,4 +53,26 @@ main {
     margin: 5px;
     border: 2px solid #ccc;
     border-radius: 8px;
+  }
+
+  .display-container {
+    display: none; /*Change this */
+    justify-content: center;
+    position: relative;
+    height: 75vh;
+    min-width: 50vw;
+    max-width: 75vw;
+  }
+
+  .display-container__current-img {
+    max-width: 100%;
+  }
+
+  .display-container__controls {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
   }
