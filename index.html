@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestureCore</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="refactored.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,12 +13,12 @@
         <h1>GestureCore</h1>
     </header>
     <main>
-        <div id="settings-container" class="settings-container">
+        <div id="settingsSection" class="settings-container">
 
-            <div id="img-selection-container"class="img-selection-container">
-                <button id="img-selection-btn" class="img-selection-btn button">Choose Images</button>
-                <input type="file" id="img-input" accept="image/*" multiple style="display: none;">
-                <div id="img-previews" class="img-previews">
+            <div id="imageSelectSection"class="img-selection-container">
+                <button id="chooseImagesBtn" class="img-selection-btn button">Choose Images</button>
+                <input type="file" id="imagesFileInput" accept="image/*" multiple style="display: none;">
+                <div id="imagePreviewsContainer" class="img-previews">
                 </div>
             </div>
             
